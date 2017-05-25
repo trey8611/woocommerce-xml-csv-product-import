@@ -246,7 +246,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		}
 		elseif($import->options['product_stock_status'] == 'auto')
 		{
-			$this->count and $this->data['product_stock_status'] = array_fill(0, $this->count, $import->options['product_stock_status']);
+			$count and $this->data['product_stock_status'] = array_fill(0, $count, $import->options['product_stock_status']);
 
             $nostock = absint( max( get_option( 'woocommerce_notify_no_stock_amount' ), 0 ) );
 
@@ -263,7 +263,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		}
 		else
 		{
-			$this->count and $this->data['product_stock_status'] = array_fill(0, $this->count, $import->options['product_stock_status']);
+			$count and $this->data['product_stock_status'] = array_fill(0, $count, $import->options['product_stock_status']);
 		}
 
 		// Composing product Allow Backorders?						
@@ -1198,10 +1198,10 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		}				
 
 		// Upsells
-		$import_linked_products($pid, $product_up_sells[$i], '_upsell_ids', $is_new_product);
+		$this->import_linked_products($pid, $product_up_sells[$i], '_upsell_ids', $is_new_product);
 
 		// Cross sells
-		$import_linked_products($pid, $product_cross_sells[$i], '_crosssell_ids', $is_new_product);		
+		$this->import_linked_products($pid, $product_cross_sells[$i], '_crosssell_ids', $is_new_product);		
 
 		// Downloadable options
 		if ( $is_downloadable == 'yes' ) {
