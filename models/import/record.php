@@ -1461,67 +1461,76 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 
         wp_cache_delete( $pid, $tx_name . '_relationships' );
 		
-	}		
-	
-	function create_taxonomy($attr_name, $logger){
-		
-		global $woocommerce;
+	}
 
-		if ( ! taxonomy_exists( wc_attribute_taxonomy_name( $attr_name ) ) ) {
+    function create_taxonomy($attr_name, $logger, $prefix = 1){
 
-	 		// Grab the submitted data							
-			$attribute_name    = ( isset( $attr_name ) ) ? wc_sanitize_taxonomy_name( stripslashes( (string) $attr_name ) ) : '';
-			$attribute_label   = stripslashes( (string) $attr_name );
-			$attribute_type    = 'select';
-			$attribute_orderby = 'menu_order';			
+        global $woocommerce;
 
-			// if ( in_array( $attribute_name, $this->reserved_terms ) ) {
-			// 	$attribute_name .= 's';
-			// }
+        $attr_name_real = $prefix > 1 ? $attr_name . " " . $prefix : $attr_name;
 
-			if ( in_array( $attribute_name, $this->reserved_terms ) ) {
-				$logger and call_user_func($logger, sprintf(__('- <b>WARNING</b>: Slug “%s” is not allowed because it is a reserved term. Change it, please.', 'wpai_woocommerce_addon_plugin'), wc_attribute_taxonomy_name( $attribute_name )));
-			}			
-			else{				
+        if ( ! taxonomy_exists( wc_attribute_taxonomy_name( $attr_name_real ) ) ) {
 
-				// Register the taxonomy now so that the import works!
-				$domain = wc_attribute_taxonomy_name( $attr_name );
-				if (strlen($domain) <= 32){
+            // Grab the submitted data
+            $attribute_name    = ( isset( $attr_name ) ) ? wc_sanitize_taxonomy_name( stripslashes( (string) $attr_name_real ) ) : '';
+            $attribute_label   = stripslashes( (string) $attr_name );
+            $attribute_type    = 'select';
+            $attribute_orderby = 'menu_order';
 
-					$this->wpdb->insert(
-						$this->wpdb->prefix . 'woocommerce_attribute_taxonomies',
-						array(
-							'attribute_label'   => $attribute_label,
-							'attribute_name'    => $attribute_name,
-							'attribute_type'    => $attribute_type,
-							'attribute_orderby' => $attribute_orderby,
-						)
-					);												
-								
-					register_taxonomy( $domain,
-				        apply_filters( 'woocommerce_taxonomy_objects_' . $domain, array('product') ),
-				        apply_filters( 'woocommerce_taxonomy_args_' . $domain, array(
-				            'hierarchical' => true,
-				            'show_ui' => false,
-				            'query_var' => true,
-				            'rewrite' => false,
-				        ) )
-				    );
+            if ( in_array( wc_sanitize_taxonomy_name( stripslashes( (string) $attr_name_real)), $this->reserved_terms ) ) {
+                $prefix++;
+                return $this->create_taxonomy($attr_name, $logger, $prefix);
+                //$logger and call_user_func($logger, sprintf(__('- <b>WARNING</b>: Slug “%s” is not allowed because it is a reserved term. Change it, please.', 'wpai_woocommerce_addon_plugin'), wc_attribute_taxonomy_name( $attribute_name )));
+            }
+            else{
 
-					delete_transient( 'wc_attribute_taxonomies' );
-					$attribute_taxonomies = $this->wpdb->get_results( "SELECT * FROM " . $this->wpdb->prefix . "woocommerce_attribute_taxonomies" );
-					set_transient( 'wc_attribute_taxonomies', $attribute_taxonomies );
-					apply_filters( 'woocommerce_attribute_taxonomies', $attribute_taxonomies );
+                // Register the taxonomy now so that the import works!
+                $domain = wc_attribute_taxonomy_name( $attr_name_real );
+                if (strlen($domain) <= 28){
 
-					$logger and call_user_func($logger, sprintf(__('- <b>CREATED</b>: Taxonomy attribute “%s” have been successfully created.', 'wpai_woocommerce_addon_plugin'), wc_attribute_taxonomy_name( $attribute_name )));	
+                    $this->wpdb->insert(
+                        $this->wpdb->prefix . 'woocommerce_attribute_taxonomies',
+                        array(
+                            'attribute_label'   => $attribute_label,
+                            'attribute_name'    => $attribute_name,
+                            'attribute_type'    => $attribute_type,
+                            'attribute_orderby' => $attribute_orderby,
+                        )
+                    );
 
-				}
-				else{
-					$logger and call_user_func($logger, sprintf(__('- <b>WARNING</b>: Taxonomy “%s” name is more than 32 characters. Change it, please.', 'wpai_woocommerce_addon_plugin'), $attr_name));
-				}				
-			}
-	 	}
-	}	
+                    register_taxonomy( $domain,
+                        apply_filters( 'woocommerce_taxonomy_objects_' . $domain, array('product') ),
+                        apply_filters( 'woocommerce_taxonomy_args_' . $domain, array(
+                            'hierarchical' => true,
+                            'show_ui' => false,
+                            'query_var' => true,
+                            'rewrite' => false,
+                        ) )
+                    );
+
+                    delete_transient( 'wc_attribute_taxonomies' );
+                    $attribute_taxonomies = $this->wpdb->get_results( "SELECT * FROM " . $this->wpdb->prefix . "woocommerce_attribute_taxonomies" );
+                    set_transient( 'wc_attribute_taxonomies', $attribute_taxonomies );
+                    apply_filters( 'woocommerce_attribute_taxonomies', $attribute_taxonomies );
+
+                    $logger and call_user_func($logger, sprintf(__('- <b>CREATED</b>: Taxonomy attribute “%s” have been successfully created.', 'wpai_woocommerce_addon_plugin'), wc_attribute_taxonomy_name( $attribute_name )));
+
+                }
+                else{
+                    $logger and call_user_func($logger, sprintf(__('- <b>WARNING</b>: Taxonomy “%s” name is more than 28 characters. Change it, please.', 'wpai_woocommerce_addon_plugin'), $attr_name));
+                }
+            }
+        }
+        else{
+            if ( in_array( wc_sanitize_taxonomy_name( stripslashes( (string) $attr_name_real)), $this->reserved_terms ) ) {
+                $prefix++;
+                return $this->create_taxonomy($attr_name, $logger, $prefix);
+                //$logger and call_user_func($logger, sprintf(__('- <b>WARNING</b>: Slug “%s” is not allowed because it is a reserved term. Change it, please.', 'wpai_woocommerce_addon_plugin'), wc_attribute_taxonomy_name( $attribute_name )));
+            }
+        }
+
+        return $attr_name_real;
+    }
 
 	public function _filter_has_cap_unfiltered_html($caps)
 	{
