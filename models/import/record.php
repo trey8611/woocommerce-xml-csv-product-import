@@ -16,6 +16,8 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 	public $post_meta_to_insert;
 	public $existing_meta_keys;
 	public $articleData;
+	public $import;
+	public $logger;
 
 	public $reserved_terms = array(
 				'attachment', 'attachment_id', 'author', 'author_name', 'calendar', 'cat', 'category', 'category__and',
@@ -624,6 +626,9 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 	}
 
 	public function import( $importData = array() ){
+
+		$this->import = $importData['import'];		
+		$this->logger = $importData['logger'];
 
 		extract($importData); 
 
@@ -1538,7 +1543,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		return $caps;
 	}			
 
-	function import_linked_products($pid, $products, $type, $is_new_product, $logger, $import_id)
+	function import_linked_products( $pid, $products, $type, $is_new_product )
 	{
 		if ( ! $is_new_product and ! $this->is_update_cf($type) ) return;
 
@@ -1607,7 +1612,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 				{
 					$linked_products[] = $linked_product->ID;					
 					
-					$logger and call_user_func($logger, sprintf(__('Product `%s` with ID `%d` added to %s list.', 'wpai_woocommerce_addon_plugin'), $linked_product->post_title, $linked_product->ID, $type == '_upsell_ids' ? 'Up-Sells' : 'Cross-Sells') );		
+					$this->logger and call_user_func($this->logger, sprintf(__('Product `%s` with ID `%d` added to %s list.', 'wpai_woocommerce_addon_plugin'), $linked_product->post_title, $linked_product->ID, $type == '_upsell_ids' ? 'Up-Sells' : 'Cross-Sells') );		
 				}
 				else
 				{
@@ -1618,7 +1623,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 			// not all linked products founded
 			if ( ! empty($not_found))
 			{
-				$not_founded_linked_products = get_option( 'wp_all_import_not_linked_products_' . $import_id );
+				$not_founded_linked_products = get_option( 'wp_all_import_not_linked_products_' . $this->import->id );
 
 				if (empty($not_founded_linked_products)) $not_founded_linked_products = array();				
 
@@ -1628,7 +1633,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 					'not_linked_products' => $not_found
 				);
 
-				update_option( 'wp_all_import_not_linked_products_' . $import_id, $not_founded_linked_products );
+				update_option( 'wp_all_import_not_linked_products_' . $this->import->id, $not_founded_linked_products );
 			}					
 
 			$this->pushmeta($pid, $type, $linked_products);	
@@ -1638,7 +1643,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		{
 			delete_post_meta( $pid, $type );
 		}
-	}
+	}	
 
 	function is_update_custom_field($existing_meta_keys, $options, $meta_key){
 
