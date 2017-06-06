@@ -244,7 +244,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		// Composing product Stock status							
 		if ($import->options['product_stock_status'] == 'xpath' and "" != $import->options['single_product_stock_status'])
 		{
-			$this->data['product_stock_status'] = XmlImportParser::factory($this->xml, $cxpath, $import->options['single_product_stock_status'], $file)->parse($records); $tmp_files[] = $file;						
+			$this->data['product_stock_status'] = XmlImportParser::factory($xml, $cxpath, $import->options['single_product_stock_status'], $file)->parse($records); $tmp_files[] = $file;						
 		}
 		elseif($import->options['product_stock_status'] == 'auto')
 		{
