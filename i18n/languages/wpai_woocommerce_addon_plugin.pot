@@ -1,0 +1,1140 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: WooCommerce Add-On\n"
+"Language: en-us\n"
+
+#: actions/admin_notices.php:10
+msgid "<b>%s Plugin</b>: WooCommerce must be installed."
+msgstr ""
+
+#: actions/admin_notices.php:24
+msgid "<b>%s Plugin</b>: WP All Import must be installed. Free edition of WP All Import at <a href=\"http://wordpress.org/plugins/wp-all-import/\" target=\"_blank\">http://wordpress.org/plugins/wp-all-import/</a> and the paid edition at <a href=\"http://www.wpallimport.com/\">http://www.wpallimport.com/</a>"
+msgstr ""
+
+#: actions/admin_notices.php:38
+msgid "<b>%s Plugin</b>: Please update your WP All Import to the latest version"
+msgstr ""
+
+#: actions/admin_notices.php:51
+msgid "<b>%s Plugin</b>: Please update your WooCommerce to the latest version"
+msgstr ""
+
+#: actions/pmxi_reimport.php:24 views/admin/import/index.php:16
+msgid "Product Type"
+msgstr ""
+
+#: actions/pmxi_reimport.php:30 views/admin/import/index.php:66
+msgid "Attributes"
+msgstr ""
+
+#: actions/pmxi_reimport.php:31
+msgid "If Keep Custom Fields box is checked, it will keep all Custom Fields, and add any new Custom Fields specified in Custom Fields section, as long as they do not overwrite existing fields. If 'Only keep this Custom Fields' is specified, it will only keep the specified fields."
+msgstr ""
+
+#: actions/pmxi_reimport.php:35
+msgid "Update all Attributes"
+msgstr ""
+
+#: actions/pmxi_reimport.php:39
+msgid "Update only these Attributes, leave the rest alone"
+msgstr ""
+
+#: actions/pmxi_reimport.php:48
+msgid "Leave these attributes alone, update all other Attributes"
+msgstr ""
+
+#: controllers/controller/admin.php:55
+msgid "Remove this item? If you have previously reduced this item's stock, or this order was submitted by a customer, will need to manually restore the item's stock."
+msgstr ""
+
+#: controllers/controller/admin.php:56
+msgid "Remove this attribute?"
+msgstr ""
+
+#: controllers/controller/admin.php:57
+#: views/admin/import/_tabs/_attributes.php:12
+#: views/admin/import/_tabs/_linked_product.php:94
+#: views/admin/import/_tabs/_variations.php:519
+msgid "Name"
+msgstr ""
+
+#: controllers/controller/admin.php:58
+msgid "Remove"
+msgstr ""
+
+#: controllers/controller/admin.php:59
+msgid "Click to toggle"
+msgstr ""
+
+#: controllers/controller/admin.php:60
+msgid "Value(s)"
+msgstr ""
+
+#: controllers/controller/admin.php:61
+msgid "Enter some text, or some attributes by pipe (|) separating values."
+msgstr ""
+
+#: controllers/controller/admin.php:62
+msgid "Visible on the product page"
+msgstr ""
+
+#: controllers/controller/admin.php:63
+msgid "Used for variations"
+msgstr ""
+
+#: controllers/controller/admin.php:64
+msgid "Enter a name for the new attribute term:"
+msgstr ""
+
+#: controllers/controller/admin.php:65
+msgid "Calculate totals based on order items, discount amount, and shipping? Note, you will need to (optionally) calculate tax rows and cart discounts manually."
+msgstr ""
+
+#: controllers/controller/admin.php:66
+msgid "Calculate line taxes? This will calculate taxes based on the customers country. If no billing/shipping is set it will use the store base country."
+msgstr ""
+
+#: controllers/controller/admin.php:67
+msgid "Copy billing information to shipping information? This will remove any currently entered shipping information."
+msgstr ""
+
+#: controllers/controller/admin.php:68
+msgid "Load the customer's billing information? This will remove any currently entered billing information."
+msgstr ""
+
+#: controllers/controller/admin.php:69
+msgid "Load the customer's shipping information? This will remove any currently entered shipping information."
+msgstr ""
+
+#: controllers/controller/admin.php:70
+#: views/admin/import/_tabs/_advanced.php:49
+msgid "Featured"
+msgstr ""
+
+#: controllers/controller/admin.php:74
+msgid "Meta Name"
+msgstr ""
+
+#: controllers/controller/admin.php:75
+msgid "Meta Value"
+msgstr ""
+
+#: controllers/controller/admin.php:76
+msgid "No customer selected"
+msgstr ""
+
+#: controllers/controller/admin.php:77
+msgid "Tax Label:"
+msgstr ""
+
+#: controllers/controller/admin.php:78
+msgid "Compound:"
+msgstr ""
+
+#: controllers/controller/admin.php:79
+msgid "Cart Tax:"
+msgstr ""
+
+#: controllers/controller/admin.php:80
+msgid "Shipping Tax:"
+msgstr ""
+
+#: filters/pmxi_custom_types.php:7
+msgid "WooCommerce Products"
+msgstr ""
+
+#: filters/pmxi_custom_types.php:8
+msgid "WooCommerce Orders"
+msgstr ""
+
+#: filters/pmxi_custom_types.php:9
+msgid "WooCommerce Coupons"
+msgstr ""
+
+#: models/import/record.php:63
+msgid "Composing product data..."
+msgstr ""
+
+#: models/import/record.php:471
+msgid "Composing variations attributes..."
+msgstr ""
+
+#: models/import/record.php:810
+msgid "<b>WARNING</b>: Product SKU must be unique."
+msgstr ""
+
+#: models/import/record.php:1255
+msgid "Added to %s list of product ID %d."
+msgstr ""
+
+#: models/import/record.php:1385
+msgid "<b>ERROR</b> Could not insert term relationship into the database"
+msgstr ""
+
+#: models/import/record.php:1411
+msgid "- <b>WARNING</b>: Slug “%s” is not allowed because it is a reserved term. Change it, please."
+msgstr ""
+
+#: models/import/record.php:1444
+msgid "- <b>CREATED</b>: Taxonomy attribute “%s” have been successfully created."
+msgstr ""
+
+#: models/import/record.php:1448
+msgid "- <b>WARNING</b>: Taxonomy “%s” name is more than 32 characters. Change it, please."
+msgstr ""
+
+#: models/import/record.php:1529
+msgid "Product `%s` with ID `%d` added to %s list."
+msgstr ""
+
+#: plugin.php:429
+msgid "WP All Import - WooCommerce Add-On Pro Version"
+msgstr ""
+
+#: plugin.php:429
+msgid "Pro Version"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:4
+#: views/admin/import/_tabs/_attributes.php:4
+msgid "Upgrade to the Pro edition of WP All Import and the WooCommerce Add-On to import to Variable, Affiliate, and Grouped Products"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:5
+#: views/admin/import/_tabs/_attributes.php:5
+#: views/admin/import/_tabs/_general.php:4
+#: views/admin/import/_tabs/_inventory.php:4
+#: views/admin/import/_tabs/_linked_product.php:4
+#: views/admin/import/_tabs/_options.php:4
+#: views/admin/import/_tabs/_shipping.php:4
+#: views/admin/import/_tabs/_variations.php:4
+msgid "If you already own it, remove the free edition and install the Pro edition."
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:10
+msgid "Purchase Note"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:16
+msgid "Menu order"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:23
+msgid "Enable reviews"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:27
+#: views/admin/import/_tabs/_advanced.php:53
+#: views/admin/import/_tabs/_general.php:119
+#: views/admin/import/_tabs/_inventory.php:12
+#: views/admin/import/_tabs/_inventory.php:103
+#: views/admin/import/_tabs/_variations.php:157
+#: views/admin/import/_tabs/_variations.php:489
+#: views/admin/import/_tabs/_variations.php:656
+#: views/admin/import/_tabs/_variations.php:718
+msgid "Yes"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:31
+#: views/admin/import/_tabs/_advanced.php:57
+#: views/admin/import/_tabs/_general.php:123
+#: views/admin/import/_tabs/_inventory.php:16
+#: views/admin/import/_tabs/_inventory.php:107
+#: views/admin/import/_tabs/_variations.php:161
+#: views/admin/import/_tabs/_variations.php:493
+#: views/admin/import/_tabs/_variations.php:660
+#: views/admin/import/_tabs/_variations.php:722
+msgid "No"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:35
+#: views/admin/import/_tabs/_advanced.php:61
+#: views/admin/import/_tabs/_advanced.php:95
+#: views/admin/import/_tabs/_attributes.php:70
+#: views/admin/import/_tabs/_attributes.php:92
+#: views/admin/import/_tabs/_attributes.php:114
+#: views/admin/import/_tabs/_attributes.php:136
+#: views/admin/import/_tabs/_attributes.php:199
+#: views/admin/import/_tabs/_attributes.php:221
+#: views/admin/import/_tabs/_attributes.php:243
+#: views/admin/import/_tabs/_attributes.php:265
+#: views/admin/import/_tabs/_attributes.php:327
+#: views/admin/import/_tabs/_attributes.php:349
+#: views/admin/import/_tabs/_attributes.php:371
+#: views/admin/import/_tabs/_attributes.php:393
+#: views/admin/import/_tabs/_general.php:127
+#: views/admin/import/_tabs/_general.php:150
+#: views/admin/import/_tabs/_general.php:173
+#: views/admin/import/_tabs/_inventory.php:20
+#: views/admin/import/_tabs/_inventory.php:56
+#: views/admin/import/_tabs/_inventory.php:86
+#: views/admin/import/_tabs/_inventory.php:111
+#: views/admin/import/_tabs/_variations.php:165
+#: views/admin/import/_tabs/_variations.php:213
+#: views/admin/import/_tabs/_variations.php:288
+#: views/admin/import/_tabs/_variations.php:432
+#: views/admin/import/_tabs/_variations.php:497
+#: views/admin/import/_tabs/_variations.php:664
+#: views/admin/import/_tabs/_variations.php:701
+#: views/admin/import/_tabs/_variations.php:726
+msgid "Set with XPath"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:40
+#: views/admin/import/_tabs/_advanced.php:66
+#: views/admin/import/_tabs/_attributes.php:75
+#: views/admin/import/_tabs/_attributes.php:97
+#: views/admin/import/_tabs/_attributes.php:119
+#: views/admin/import/_tabs/_attributes.php:141
+#: views/admin/import/_tabs/_attributes.php:204
+#: views/admin/import/_tabs/_attributes.php:226
+#: views/admin/import/_tabs/_attributes.php:248
+#: views/admin/import/_tabs/_attributes.php:270
+#: views/admin/import/_tabs/_attributes.php:332
+#: views/admin/import/_tabs/_attributes.php:354
+#: views/admin/import/_tabs/_attributes.php:376
+#: views/admin/import/_tabs/_attributes.php:398
+#: views/admin/import/_tabs/_general.php:132
+#: views/admin/import/_tabs/_general.php:155
+#: views/admin/import/_tabs/_general.php:178
+#: views/admin/import/_tabs/_inventory.php:25
+#: views/admin/import/_tabs/_inventory.php:116
+#: views/admin/import/_tabs/_variations.php:170
+#: views/admin/import/_tabs/_variations.php:293
+#: views/admin/import/_tabs/_variations.php:437
+#: views/admin/import/_tabs/_variations.php:502
+#: views/admin/import/_tabs/_variations.php:669
+#: views/admin/import/_tabs/_variations.php:731
+msgid "The value of presented XPath should be one of the following: ('yes', 'no')."
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:75
+msgid "Catalog visibility"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:79
+msgid "Catalog/search"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:83
+msgid "Catalog"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:87
+msgid "Search"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:91
+msgid "Hidden"
+msgstr ""
+
+#: views/admin/import/_tabs/_advanced.php:100
+msgid "The value of presented XPath should be one of the following: ('visible', 'catalog', 'search', 'hidden')."
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:14
+#: views/admin/import/_tabs/_variations.php:520
+msgid "Values"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:15
+msgid "Separate mutiple values with a |"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:32
+#: views/admin/import/_tabs/_attributes.php:164
+#: views/admin/import/_tabs/_attributes.php:292 views/admin/import/index.php:68
+msgid "Advanced"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:38
+#: views/admin/import/_tabs/_attributes.php:62
+#: views/admin/import/_tabs/_attributes.php:170
+#: views/admin/import/_tabs/_attributes.php:191
+#: views/admin/import/_tabs/_attributes.php:298
+#: views/admin/import/_tabs/_attributes.php:319
+#: views/admin/import/_tabs/_variations.php:538
+#: views/admin/import/_tabs/_variations.php:572
+#: views/admin/import/_tabs/_variations.php:602
+msgid "In Variations"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:43
+#: views/admin/import/_tabs/_attributes.php:84
+#: views/admin/import/_tabs/_attributes.php:174
+#: views/admin/import/_tabs/_attributes.php:213
+#: views/admin/import/_tabs/_attributes.php:302
+#: views/admin/import/_tabs/_attributes.php:341
+#: views/admin/import/_tabs/_variations.php:543
+#: views/admin/import/_tabs/_variations.php:576
+#: views/admin/import/_tabs/_variations.php:606
+msgid "Is Visible"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:48
+#: views/admin/import/_tabs/_attributes.php:106
+#: views/admin/import/_tabs/_attributes.php:178
+#: views/admin/import/_tabs/_attributes.php:235
+#: views/admin/import/_tabs/_attributes.php:306
+#: views/admin/import/_tabs/_attributes.php:363
+msgid "Is Taxonomy"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:53
+#: views/admin/import/_tabs/_attributes.php:128
+#: views/admin/import/_tabs/_attributes.php:182
+#: views/admin/import/_tabs/_attributes.php:257
+#: views/admin/import/_tabs/_attributes.php:310
+#: views/admin/import/_tabs/_attributes.php:385
+#: views/admin/import/_tabs/_variations.php:553
+#: views/admin/import/_tabs/_variations.php:584
+#: views/admin/import/_tabs/_variations.php:614
+msgid "Auto-Create Terms"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:66
+#: views/admin/import/_tabs/_attributes.php:195
+#: views/admin/import/_tabs/_attributes.php:323
+msgid "Not In Variations"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:88
+#: views/admin/import/_tabs/_attributes.php:217
+#: views/admin/import/_tabs/_attributes.php:345
+msgid "Not Visible"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:110
+#: views/admin/import/_tabs/_attributes.php:239
+#: views/admin/import/_tabs/_attributes.php:367
+msgid "Not Taxonomy"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:132
+#: views/admin/import/_tabs/_attributes.php:261
+#: views/admin/import/_tabs/_attributes.php:389
+msgid "Do Not Create Terms"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:411
+#: views/admin/import/_tabs/_variations.php:621
+msgid "add"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:411
+#: views/admin/import/_tabs/_variations.php:621
+msgid "Add more"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:420
+msgid "Link all variations"
+msgstr ""
+
+#: views/admin/import/_tabs/_attributes.php:421
+msgid "This option will create all possible variations for the presented attributes. Works just like the Link All Variations option inside WooCommerce."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:3
+msgid "Upgrade to the Pro edition of WP All Import and the WooCommerce Add-On to Import to Variable, Affiliate, and Grouped Products."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:8
+#: views/admin/import/_tabs/_variations.php:122
+msgid "SKU"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:14
+msgid "Product URL"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:16
+msgid "The external/affiliate link URL to the product."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:19
+msgid "Button text"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:21
+msgid "This text will be shown on the button linking to the external product."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:26
+msgid "Prices should be presented as you would enter them manually in WooCommerce - with no currency symbol."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:29
+#: views/admin/import/_tabs/_general.php:53
+msgid "Regular Price (%s)"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:30
+msgid "required"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:33
+#: views/admin/import/_tabs/_general.php:65
+msgid "Sale Price (%s)"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:34
+#: views/admin/import/_tabs/_variations.php:236
+msgid "schedule"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:39
+msgid "Sale Price Dates"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:41
+#: views/admin/import/_tabs/_variations.php:269
+msgid "and"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:43
+#: views/admin/import/_tabs/_variations.php:271
+msgid "cancel"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:49
+msgid "Adjust Prices (mark up, mark down, convert currency)"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:59
+#: views/admin/import/_tabs/_general.php:71
+msgid "Leave blank or enter in 100% to keep the price as is. Enter in 110% to markup by 10%. Enter in 50% to cut prices in half."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:60
+#: views/admin/import/_tabs/_general.php:72
+msgid "Enter a negative number to reduce prices."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:82
+msgid "Remove currency symbols from price"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:83
+msgid "WP All Import attempt to remove currency symbols from prices."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:89
+msgid "Convert decimal separator to a period"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:90
+msgid "Prices must be imported using a period as the decimal separator. If you'd like to change the decimal separator you can do so by editing your WooCommerce settings."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:96
+msgid "Attempt to convert incorrectly formatted prices to WooCommerce format"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:97
+msgid "WP All Import will attempt to correct the formatting of prices presented incorrectly, but this doesn't always work. Try unchecking this option if your prices are not appearing correctly, or enter your prices in your import file using the same format you would when entering them in WooCommerce."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:101
+msgid "Preview Prices"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:108
+#: views/admin/import/_tabs/_variations.php:141
+msgid "Variation Description"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:115
+#: views/admin/import/_tabs/_variations.php:483
+#: views/admin/import/_tabs/_variations.php:714
+msgid "Variation Enabled"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:115
+#: views/admin/import/_tabs/_variations.php:714
+msgid "This option is the same as the Enabled checkbox when editing an individual variation in WooCommerce."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:142
+#: views/admin/import/_tabs/_variations.php:111
+#: views/admin/import/_tabs/_variations.php:280 views/admin/import/index.php:43
+msgid "Virtual"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:146
+#: views/admin/import/_tabs/_variations.php:284
+msgid "Not Virtual"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:165
+#: views/admin/import/_tabs/_variations.php:115
+#: views/admin/import/_tabs/_variations.php:424 views/admin/import/index.php:47
+msgid "Downloadable"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:169
+#: views/admin/import/_tabs/_variations.php:428
+msgid "Not Downloadable"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:186
+#: views/admin/import/_tabs/_variations.php:450
+msgid "File paths"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:189
+msgid "File paths/URLs, comma separated. The delimiter is used when an XML element contains multiple URLs/paths - i.e. <code>http://files.com/1.doc, http://files.com/2.doc</code>."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:192
+#: views/admin/import/_tabs/_variations.php:456
+msgid "File names"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:195
+#: views/admin/import/_tabs/_variations.php:459
+msgid "File names, comma separated. The delimiter is used when an XML element contains multiple names - i.e. <code>1.doc, 2.doc</code>."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:198
+#: views/admin/import/_tabs/_variations.php:462
+msgid "Download Limit"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:200
+msgid "Leave blank for unlimited re-downloads."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:203
+#: views/admin/import/_tabs/_variations.php:471
+msgid "Download Expiry"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:205
+msgid "Enter the number of days before a download link expires, or leave blank."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:208
+msgid "Download Type"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:210
+msgid "The value of presented XPath should be one of the following: ('application', 'music')."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:218
+msgid "Tax Status"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:223
+msgid "Taxable"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:224
+msgid "Shipping only"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:225
+msgid "None"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:233
+msgid "Set tax status with XPath"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:238
+msgid "Value should be the slug for the tax status - 'taxable', 'shipping', and 'none' are the default slugs."
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:248
+#: views/admin/import/_tabs/_variations.php:379
+msgid "Tax Class"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:256
+#: views/admin/import/_tabs/_variations.php:386
+msgid "Standard"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:272
+msgid "Set tax class with XPath"
+msgstr ""
+
+#: views/admin/import/_tabs/_general.php:278
+msgid "Value should be the slug for the tax class - 'reduced-rate' and 'zero-rate', are the default slugs."
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:3
+#: views/admin/import/_tabs/_linked_product.php:3
+#: views/admin/import/_tabs/_options.php:3
+#: views/admin/import/_tabs/_shipping.php:3
+#: views/admin/import/_tabs/_variations.php:3
+msgid "Upgrade to the Pro edition of WP All Import and the WooCommerce Add-On to Import to Variable, Affiliate, and Grouped Products"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:8
+#: views/admin/import/_tabs/_variations.php:153
+#: views/admin/import/_tabs/_variations.php:652
+msgid "Manage stock?"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:33
+#: views/admin/import/_tabs/_variations.php:183
+#: views/admin/import/_tabs/_variations.php:677
+msgid "Stock Qty"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:39
+#: views/admin/import/_tabs/_variations.php:196
+#: views/admin/import/_tabs/_variations.php:684
+msgid "Stock status"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:43
+#: views/admin/import/_tabs/_variations.php:200
+#: views/admin/import/_tabs/_variations.php:688
+msgid "In stock"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:47
+#: views/admin/import/_tabs/_variations.php:204
+#: views/admin/import/_tabs/_variations.php:692
+msgid "Out of stock"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:51
+#: views/admin/import/_tabs/_variations.php:208
+#: views/admin/import/_tabs/_variations.php:696
+msgid "Set automatically"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:52
+#: views/admin/import/_tabs/_variations.php:697
+msgid "Set the stock status to In Stock for positive Stock Qty values, and Out Of Stock if Stock Qty is 0 or blank."
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:61
+#: views/admin/import/_tabs/_variations.php:218
+#: views/admin/import/_tabs/_variations.php:706
+msgid "The value of presented XPath should be one of the following: ('instock', 'outofstock')."
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:70
+msgid "Allow Backorders?"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:74
+msgid "Do not allow"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:78
+msgid "Allow, but notify customer"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:82
+msgid "Allow"
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:91
+msgid "The value of presented XPath should be one of the following: ('no', 'notify', 'yes')."
+msgstr ""
+
+#: views/admin/import/_tabs/_inventory.php:99
+msgid "Sold Individually?"
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:8
+msgid "Up-Sells"
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:10
+#: views/admin/import/_tabs/_linked_product.php:15
+msgid "Products can be matched by SKU, ID, or Title, and must be comma separated."
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:13
+msgid "Cross-Sells"
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:21
+msgid "Choose a grouped product&hellip;"
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:51
+msgid "Grouping"
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:64
+msgid "Set this option to make this product part of a grouped product."
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:71
+msgid "Manual Grouped Product Matching"
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:72
+msgid "Product will be assigned as the child of an already created product matching the specified criteria."
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:79
+msgid "Match by Post Title"
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:90
+msgid "Match by Custom Field"
+msgstr ""
+
+#: views/admin/import/_tabs/_linked_product.php:99
+msgid "Value"
+msgstr ""
+
+#: views/admin/import/_tabs/_options.php:8
+msgid "Import options"
+msgstr ""
+
+#: views/admin/import/_tabs/_options.php:13
+msgid "Set out of stock status for missing records"
+msgstr ""
+
+#: views/admin/import/_tabs/_options.php:14
+msgid "Option to set the stock status to out of stock instead of deleting the product entirely. This option doesn't work when 'Delete missing records' option is enabled."
+msgstr ""
+
+#: views/admin/import/_tabs/_options.php:19
+msgid "Disable auto SKU generation"
+msgstr ""
+
+#: views/admin/import/_tabs/_options.php:20
+msgid "Plugin will NOT automaticaly generate the SKU for each product based on md5 algorithm, if SKU option is empty."
+msgstr ""
+
+#: views/admin/import/_tabs/_options.php:25
+msgid "Don't check for duplicate SKUs"
+msgstr ""
+
+#: views/admin/import/_tabs/_options.php:26
+msgid "Each product should have a unique SKU. If this box is checked, WP All Import won't check for duplicate SKUs, which speeds up the import process. Make sure the SKU for each of your products is unique. If this box is unchecked, WP All Import will import products with duplicate SKUs with a blank SKU."
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:8
+msgid "Weight (%s)"
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:12
+msgid "Dimensions (%s)"
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:13
+msgid "Length"
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:14
+msgid "Width"
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:15
+msgid "Height"
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:23
+#: views/admin/import/_tabs/_variations.php:333
+msgid "Shipping Class"
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:32
+#: views/admin/import/_tabs/_variations.php:344
+msgid "No shipping class"
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:47
+#: views/admin/import/_tabs/_variations.php:359
+msgid "Set product shipping class with XPath"
+msgstr ""
+
+#: views/admin/import/_tabs/_shipping.php:52
+msgid "Value should be the slug for the shipping class - 'taxable', 'shipping' and 'none' are the default slugs."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:10
+msgid "All my variable products have SKUs or some other unique identifier. Each variation is linked to its parent with its parent's SKU or other unique identifier."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:14
+msgid "SKU element for parent"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:16
+msgid "SKU column in the below example."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:19
+msgid "Parent SKU element for variation"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:21
+msgid "Parent SKU column in the below example."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:24
+#: views/admin/import/_tabs/_variations.php:44
+#: views/admin/import/_tabs/_variations.php:63
+#: views/admin/import/_tabs/_variations.php:81
+msgid "Example Data For Use With This Option"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:24
+#: views/admin/import/_tabs/_variations.php:44
+#: views/admin/import/_tabs/_variations.php:63
+#: views/admin/import/_tabs/_variations.php:81
+msgid "download"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:34
+msgid "All products with variations are grouped with a unique identifier that is the same for each variation and unique for each product."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:39
+msgid "Unique Identifier"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:41
+msgid "Group ID column in the below example."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:54
+msgid "All variations for a particular product have the same title as the parent product."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:59
+#: views/admin/import/_tabs/_variations.php:77
+msgid "Product Title"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:73
+msgid "All variations for a particular product have the same title. There are no parent products."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:91
+msgid "I'm importing XML and my variations are child XML elements"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:98
+msgid "Video Example"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:101
+msgid "Variations XPath"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:102
+msgid "Open XML Tree"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:127
+msgid "Add value to the parent SKU"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:128
+msgid "Enable this checkbox to combine SKU from parent and variation products."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:132
+msgid "Image"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:137
+#: views/admin/import/_tabs/_variations.php:146
+#: views/admin/import/_tabs/_variations.php:174
+#: views/admin/import/_tabs/_variations.php:188
+#: views/admin/import/_tabs/_variations.php:231
+#: views/admin/import/_tabs/_variations.php:242
+#: views/admin/import/_tabs/_variations.php:252
+#: views/admin/import/_tabs/_variations.php:265
+#: views/admin/import/_tabs/_variations.php:297
+#: views/admin/import/_tabs/_variations.php:311
+#: views/admin/import/_tabs/_variations.php:319
+#: views/admin/import/_tabs/_variations.php:368
+#: views/admin/import/_tabs/_variations.php:412
+#: views/admin/import/_tabs/_variations.php:441
+#: views/admin/import/_tabs/_variations.php:467
+#: views/admin/import/_tabs/_variations.php:476
+msgid "XPath Is From Parent"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:189
+msgid "Enable this checkbox to determine XPath from parent element."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:209
+msgid "Set the stock status to In Stock for positive or blank Stock Qty values, and Out Of Stock if Stock Qty is 0."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:226
+msgid "Regular Price"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:235
+msgid "Sale Price"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:247
+msgid "Wholesale Price ("
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:261
+msgid "Variable Sale Price Dates"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:306
+msgid "Weight"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:315
+msgid "Dimensions (L×W×H)"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:364
+msgid "The value of presented XPath should be one of the following: ('taxable', 'shipping', 'none')."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:392
+msgid "Same as parent"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:403
+msgid "Set product tax class with XPath"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:408
+msgid "The value of presented XPath should be one of the following: ('reduced-rate', 'zero-rate')."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:453
+msgid "File paths/URLs, comma separated. The delimiter option uses when xml element contains few paths/URLs (http://files.com/1.doc, http://files.com/2.doc)."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:511
+msgid "Variation Attributes"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:548
+#: views/admin/import/_tabs/_variations.php:580
+#: views/admin/import/_tabs/_variations.php:610
+msgid "Taxonomy"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:635
+msgid "No matching elements found for XPath expression specified"
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:743
+msgid "Set the default selection in the attributes dropdowns."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:744
+msgid "The attributes for the first variation will be automatically selected on the frontend."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:749
+msgid "Set first variation as the default selection."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:753
+msgid "Set first in stock variation as the default selection."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:758
+msgid "Do not set default selections for the dropdowns."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:764
+msgid "Create products with no variations as simple products."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:769
+msgid "Save variation image to the gallery."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:774
+msgid "Set _stock value for parent product to the _stock value for the first variation."
+msgstr ""
+
+#: views/admin/import/_tabs/_variations.php:775
+msgid "This option works when there are no parent products in your feed ( cases 2 and 4 on Variations tab)."
+msgstr ""
+
+#: views/admin/import/index.php:4
+msgid "WooCommerce Add-On"
+msgstr ""
+
+#: views/admin/import/index.php:22
+msgid "Simple product"
+msgstr ""
+
+#: views/admin/import/index.php:23
+msgid "Grouped product"
+msgstr ""
+
+#: views/admin/import/index.php:24
+msgid "External/Affiliate product"
+msgstr ""
+
+#: views/admin/import/index.php:25
+msgid "Variable product"
+msgstr ""
+
+#: views/admin/import/index.php:32
+msgid "Set Product Type With XPath"
+msgstr ""
+
+#: views/admin/import/index.php:37
+msgid "The value of presented XPath should be one of the following: ('simple', 'grouped', 'external', 'variable')."
+msgstr ""
+
+#: views/admin/import/index.php:58
+msgid "General"
+msgstr ""
+
+#: views/admin/import/index.php:60
+msgid "Inventory"
+msgstr ""
+
+#: views/admin/import/index.php:62
+msgid "Shipping"
+msgstr ""
+
+#: views/admin/import/index.php:64
+msgid "Linked Products"
+msgstr ""
+
+#: views/admin/import/index.php:70
+msgid "Variations"
+msgstr ""
+
+#: views/admin/import/index.php:72
+msgid "Add-On Options"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: 
+msgid "WP All Import - WooCommerce Add-On"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#: 
+msgid "http://www.wpallimport.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+#: 
+msgid "An extremely easy, drag & drop importer to import WooCommerce simple products. A paid upgrade is available for premium support and support for Variable, Grouped, and External/Affiliate products"
+msgstr ""
+
+#. Author of the plugin/theme
+#: 
+msgid "Soflyy"
+msgstr ""
+
