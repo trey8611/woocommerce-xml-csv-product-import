@@ -682,8 +682,8 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		$this->pushmeta($pid, '_tax_status', stripslashes( $product_tax_status[$i] ) );
 		$this->pushmeta($pid, '_tax_class', strtolower($product_tax_class[$i]) == 'standard' ? '' : stripslashes( $product_tax_class[$i] ) );
 		$this->pushmeta($pid, '_purchase_note', stripslashes( $product_purchase_note[$i] ) );
-		$this->pushmeta($pid, '_featured', ($is_featured == "yes") ? 'yes' : 'no' );
-        $this->pushmeta($pid, '_visibility', stripslashes( $product_visibility[$i] ) );
+		update_post_meta($pid, '_wpai_featured', ($is_featured == "yes") ? 'yes' : 'no' );
+        update_post_meta($pid, '_wpai_visibility', stripslashes( $product_visibility[$i] ) );
 
 		// Dimensions		
 		if ( $is_virtual == 'no' ) {			
@@ -856,7 +856,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 			}
 		}
 
-		$this->pushmeta($pid, '_variation_description', wp_kses_post($product_variation_description[$i]) );
+		$this->pushmeta($pid, '_variation_description', $product_variation_description[$i] );
 
 		// Save Attributes
 		$attributes = array();
@@ -1059,7 +1059,12 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 				$this->pushmeta($pid, '_price', ($product_sale_price[$i] == "") ? '' : stripslashes( $product_sale_price[$i] ));						
 				
 			}
-			else{				
+			else{
+
+                if ( ! empty($this->articleData['ID']) and ! $this->is_update_cf('_regular_price') )
+                {
+                    $product_regular_price[$i] = get_post_meta($pid, '_regular_price', true);
+                }
 
 				$this->pushmeta($pid, '_price', ($product_regular_price[$i] == "") ? '' : stripslashes( $product_regular_price[$i] ));						
 			}
@@ -1070,8 +1075,8 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 
 			if ( $date_to && strtotime( $date_to ) < strtotime( 'NOW', current_time( 'timestamp' ) ) ) {
 				$this->pushmeta($pid, '_price', ($product_regular_price[$i] == "") ? '' : stripslashes( $product_regular_price[$i] ));				
-				$this->pushmeta($pid, '_sale_price_dates_from', '');				
-				$this->pushmeta($pid, '_sale_price_dates_to', '');													
+				// $this->pushmeta($pid, '_sale_price_dates_from', '');				
+				// $this->pushmeta($pid, '_sale_price_dates_to', '');													
 			}
 		}
 
@@ -1187,7 +1192,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 			$this->pushmeta($pid, '_backorders', $backorders);	
 
 			if ( $stock_status ) {							
-				$this->pushmeta( $pid, '_stock_status', $stock_status );
+				update_post_meta( $pid, '_stock_status', $stock_status );
 			}
 
 			$current_manage_stock = get_post_meta( $pid, '_manage_stock', true );
@@ -1257,14 +1262,39 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		}
         // Update product visibility term WC 3.0.0
         if ( version_compare(WOOCOMMERCE_VERSION, '3.0') >= 0 ) {
-            if ( pmwi_is_update_taxonomy($articleData, $import->options, 'product_visibility') ){
-                $associate_terms = array();
+
+            $associate_terms = array();
+
+            $term_ids = wp_get_object_terms($pid, 'product_visibility', array('fields' => 'ids'));
+
+            // If Not Update Featured Status checking for current featured status
+            if ( ! empty($articleData['ID']) && ( ! $this->is_update_data_allowed('is_update_advanced_options') || ! $this->is_update_data_allowed('is_update_featured_status'))) {
+                $featured_term = get_term_by( 'name', 'featured', 'product_visibility' );
+                if ( ! empty($featured_term) && ! is_wp_error($featured_term) && in_array($featured_term->term_taxonomy_id, $term_ids) ){
+                    $associate_terms[] = $featured_term->term_taxonomy_id;
+                }
+            }
+            else{
                 if ($is_featured == "yes"){
                     $featured_term = get_term_by( 'name', 'featured', 'product_visibility' );
-                    if (!empty($featured_term) && !is_wp_error($featured_term)){
+                    if ( ! empty($featured_term) && !is_wp_error($featured_term)){
                         $associate_terms[] = $featured_term->term_taxonomy_id;
                     }
                 }
+            }
+
+            // If Not Update Product Visibility checking for current product visibility
+            if ( ! empty($articleData['ID']) && ( ! $this->is_update_data_allowed('is_update_advanced_options') || ! $this->is_update_data_allowed('is_update_catalog_visibility'))) {
+                $exclude_search_term = get_term_by( 'name', 'exclude-from-search', 'product_visibility' );
+                if (!empty($exclude_search_term) && !is_wp_error($exclude_search_term) && in_array($exclude_search_term->term_taxonomy_id, $term_ids)){
+                    $associate_terms[] = $exclude_search_term->term_taxonomy_id;
+                }
+                $exclude_catalog_term = get_term_by( 'name', 'exclude-from-catalog', 'product_visibility' );
+                if (!empty($exclude_catalog_term) && !is_wp_error($exclude_catalog_term) && in_array($exclude_catalog_term->term_taxonomy_id, $term_ids)){
+                    $associate_terms[] = $exclude_catalog_term->term_taxonomy_id;
+                }
+            }
+            else{
                 if (in_array($product_visibility[$i], array('hidden', 'catalog'))){
                     $exclude_search_term = get_term_by( 'name', 'exclude-from-search', 'product_visibility' );
                     if (!empty($exclude_search_term) && !is_wp_error($exclude_search_term)){
@@ -1277,15 +1307,17 @@ class PMWI_Import_Record extends PMWI_Model_Record {
                         $associate_terms[] = $exclude_catalog_term->term_taxonomy_id;
                     }
                 }
-                $_stock_status = get_post_meta( $pid, '_stock_status', true);
-                if ( $_stock_status == 'outofstock' ){
-                    $outofstock_term = get_term_by( 'name', 'outofstock', 'product_visibility' );
-                    if (!empty($outofstock_term) && !is_wp_error($outofstock_term)){
-                        $associate_terms[] = $outofstock_term->term_taxonomy_id;
-                    }
-                }
-                $this->associate_terms( $pid, $associate_terms, 'product_visibility' );
             }
+
+            $_stock_status = get_post_meta( $pid, '_stock_status', true);
+            if ( $_stock_status == 'outofstock' ){
+                $outofstock_term = get_term_by( 'name', 'outofstock', 'product_visibility' );
+                if (!empty($outofstock_term) && !is_wp_error($outofstock_term)){
+                    $associate_terms[] = $outofstock_term->term_taxonomy_id;
+                }
+            }
+
+            $this->associate_terms( $pid, $associate_terms, 'product_visibility' );
         }
 
 		// prepare bulk SQL query
@@ -1500,6 +1532,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
                             'attribute_name'    => $attribute_name,
                             'attribute_type'    => $attribute_type,
                             'attribute_orderby' => $attribute_orderby,
+                            'attribute_public'  => 1
                         )
                     );
 
